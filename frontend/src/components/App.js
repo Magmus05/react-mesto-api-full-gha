@@ -115,7 +115,6 @@ function App() {
   function handleExit() {
     Auth.logout()
     .then((res) => {
-      console.log(res);
       if (res) {
         setIsLoggedIn(false);
         navigate("/sign-in", { replace: true });

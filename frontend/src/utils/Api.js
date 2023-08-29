@@ -108,7 +108,7 @@ class Api extends React.Component {
   }
 }
 export const api = new Api({
-  baseUrl: "http://api.magmus05.studen.nomoreparties.co/",
+  baseUrl: "https://api.magmus05.studen.nomoreparties.co/",
   //baseUrl: "https://mesto.nomoreparties.co/v1/cohort-65/",
   headers: {
     //authorization: "01c577aa-8668-46fe-928c-79fc4aa9c83a",

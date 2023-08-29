@@ -21,7 +21,6 @@ function getUsers(req, res, next) {
 }
 
 function getUserByID(req, res, next) {
-  console.log(req.params);
   User.findById(req.params.id)
     .orFail(() => next(new NOT_FOUND_ERROR("Такой ID не существует")))
     .then((user) => {
@@ -132,7 +131,6 @@ function currentUser(req, res, next) {
 }
 
 function loginOutUser(req, res) {
-  console.log(res.cookie);
 res.clearCookie("jwt").status(SUCCESS).send({message: "Вы вышли из аккаунта" });
 }
 

@@ -3,7 +3,6 @@ import { CurrentUserContext } from "../../src/contexts/CurrentUserContext.js";
 
 function Card({card, onCardClick, onDeletCard, onCardLike, onCardDelete }) {
   const currentUser = React.useContext(CurrentUserContext);
-console.log(card);
   return (
     <article className="element">
       <img
