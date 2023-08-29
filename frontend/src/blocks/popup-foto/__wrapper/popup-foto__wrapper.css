@@ -1,0 +1,16 @@
+.popup-foto__wrapper{
+	margin: 0;
+	padding: 0;
+	max-width: 75vw;
+
+	position: relative;
+	top: -10px;
+	left: 0;
+}
+
+@media screen and (max-width: 700px){
+	.popup-foto__wrapper{
+		top: 15px;
+		left: 0;
+	}
+	}

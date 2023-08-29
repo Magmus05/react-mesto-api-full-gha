@@ -1,0 +1,11 @@
+.profile__user-data{
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+@media screen and (max-width: 700px){
+	.profile__user-data{
+		gap: 10px;
+	}
+}

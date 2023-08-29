@@ -1,0 +1,16 @@
+.popup-foto{
+	/* margin: 0;
+	padding: 0; */
+	/* position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+  transition: all 0.5s; */
+	background: rgba(0,0,0,0.9);
+	z-index: -2;
+}

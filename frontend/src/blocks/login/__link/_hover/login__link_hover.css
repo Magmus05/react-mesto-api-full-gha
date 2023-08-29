@@ -1,0 +1,15 @@
+.login__link_hover{
+	text-decoration: none;
+	color: #fff;
+	margin: 0 0 0 5px;
+}
+.login__link_hover:active{
+	text-decoration: none;
+	color: #fff;
+}
+.login__link_hover:hover{
+	text-decoration: none;
+	opacity: 0.6;
+	cursor: pointer;
+	color: #fff;
+}

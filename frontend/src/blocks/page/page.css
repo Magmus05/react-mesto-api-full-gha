@@ -1,0 +1,9 @@
+.page {
+	padding: 0;
+	background-color: #000000;
+	font-family: "inter", "Arial", sans-serif;
+	font-weight: 400;
+	min-height: 100vh;
+	color: #fff;
+	position: relative;
+}

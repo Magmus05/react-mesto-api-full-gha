@@ -1,0 +1,28 @@
+.popup-foto__close{
+	padding: 0;
+	border: 0;
+	background: url(../../../images/Close-Icon.svg) center  no-repeat;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top: -40px;
+	right: -40px;
+	transition: all 0.3s;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+}
+.popup-foto__close:hover{
+	opacity: 0.6;
+}
+
+@media screen and (max-width: 700px){
+	.popup-foto__close{
+		width: 20px;
+		height: 20px;
+		top: -36px;
+		right: 0;
+		background-size: 20px 20px;
+	}
+
+}

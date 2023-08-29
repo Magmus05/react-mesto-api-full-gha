@@ -1,0 +1,29 @@
+.login__text{
+	border: 0;
+  box-sizing: border-box;
+	border-bottom: 2px solid #CCCCCC;
+	width: 358px;
+	height: 27px;
+	padding: 6px 0 13px;
+	outline: none;
+	font-size: 14px;
+	line-height: 17px;
+	background-color: black;
+	color: #CCCCCC;
+}
+/* .login__text:focus{
+	border: 2px solid #38c1d6;
+} */
+.login__text:nth-child(2){
+	margin: 30px auto 216px;
+}
+
+@media screen and (max-width: 700px){
+	.login__text{
+		width: 260px;
+	}
+	.login__text:nth-child(2){
+		margin: 30px auto 173px;
+	}
+	
+}
