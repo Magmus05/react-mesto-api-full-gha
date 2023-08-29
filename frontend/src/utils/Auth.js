@@ -1,5 +1,5 @@
 //export const baseUrl = "https://auth.nomoreparties.co";
-export const baseUrl = "http://localhost:3001";
+export const baseUrl = "http://localhost:3000";
 export function register(email, password) {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
