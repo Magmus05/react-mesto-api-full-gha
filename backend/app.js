@@ -18,6 +18,12 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger); // логгер запросов
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use("/", routesUsers);
 app.use("/cards", routesCards);
 app.use("/", auth, (req, res, next) => {
