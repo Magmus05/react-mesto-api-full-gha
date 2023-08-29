@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.11.70
+IP <ipv4> 158.160.11.70
 
 Frontend https://magmus05.studen.nomoreparties.co
 
