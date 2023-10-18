@@ -100,14 +100,17 @@ function updateUserAvatar(req, res, next) {
 
 async function login(req, res, next) {
   const { email, password } = req.body;
+  console.log(req.body);
   return User.findUserByCredentials(email, password, next)
     .then((user) => {
+      console.log(user);
       // аутентификация успешна! пользователь в переменной user
       const token = JWT.sign({ _id: user._id.valueOf() }, process.env.JWT_SECRET, {
         expiresIn: "7d",
       });
       // res.clearCookie("jwt")
       res.cookie("jwt", token);
+      console.log(token);
       return res
         .status(SUCCESS)
         .send({message: "Авторизация прошла успешно" });
