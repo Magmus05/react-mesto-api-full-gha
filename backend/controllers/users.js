@@ -109,7 +109,10 @@ async function login(req, res, next) {
         expiresIn: "7d",
       });
       // res.clearCookie("jwt")
+
       res.cookie("jwt", token);
+      console.log('process.env.JWT_SECRET');
+       console.log('token');
       console.log(token);
       return res
         .status(SUCCESS)

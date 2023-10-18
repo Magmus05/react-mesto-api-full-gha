@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const UNAUTHORIZED_ERROR = require("../errors/UnauthorizedError");
 require('dotenv').config();
 module.exports = (req, res, next) => {
-  if (!req.cookies.jwt) next(new UNAUTHORIZED_ERROR("Необходима авторизация"));
+  if (!req.cookies.jwt) next(new UNAUTHORIZED_ERROR(`Необходима авторизация TEST: ${process.env.TEST}`));
   const token = req.cookies.jwt;
   let payload;
   try {
