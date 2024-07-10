@@ -32,6 +32,7 @@ function getUserByID(req, res, next) {
 }
 
 function createUser(req, res, next) {
+  console.log(req.body);
   bcrypt.hash(req.body.password, 10).then((hash) => {
     User.create({ ...req.body, password: hash })
       .then((user) => {

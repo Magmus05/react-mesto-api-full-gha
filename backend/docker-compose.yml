@@ -1,0 +1,7 @@
+version: '3' # версия синтаксиса
+services:
+ mesto-api: # Сервер Express
+    build: .
+    container_name: mestoServer
+    ports:
+      - '3000:3000'
