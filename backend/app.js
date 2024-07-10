@@ -13,7 +13,7 @@ const { errors } = require("celebrate");
 const NOT_FOUND_ERROR = require("./errors/NotFoundError");
 const handleErrors = require("./middlewares/handleErrors");
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-app.use(cors({origin:['http://localhost:3001', 'http://mesto.magmus-web.ru'], credentials: true, maxAge: 30})); //
+app.use(cors({origin:['http://localhost:3001', 'https://mesto.magmus-web.ru'], credentials: true, maxAge: 30})); //
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger); // логгер запросов
