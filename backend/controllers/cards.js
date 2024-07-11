@@ -27,10 +27,6 @@ function deleteCard(req, res, next) {
 
     if (card === null)
     throw new NOT_FOUND_ERROR("id карточки не найден.");
-
-    console.log(card.owner.valueOf());
-    console.log(req.user._id);
-
     if (card.owner.valueOf() !== req.user._id)
     throw new FORBIDDEN_ERROR("У вас нет прав удалять чужие карточки");
       // return res
@@ -69,13 +65,11 @@ function dislikeCard(req, res, next) {
     { new: true }
   )
     .then((card) => {
-      console.log(card);
       if (card === null)
       throw new NOT_FOUND_ERROR("id карточки не найден.");
       //   return res.status(ERROR_CODE_NOT_FOUND).send({
       //     message: "id карточки не найден.",
       //   });
-      // console.log(res.status);
       res.status(SUCCESS).send(card);
     }).catch(next);
 }

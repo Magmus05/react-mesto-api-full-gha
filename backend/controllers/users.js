@@ -32,7 +32,6 @@ function getUserByID(req, res, next) {
 }
 
 function createUser(req, res, next) {
-  console.log(req.body);
   bcrypt.hash(req.body.password, 10).then((hash) => {
     User.create({ ...req.body, password: hash })
       .then((user) => {
@@ -45,8 +44,6 @@ function createUser(req, res, next) {
         });
       })
       .catch((err) => {
-        // console.log(err.name);
-        // console.log(err.message);
         if (err.code === 11000)
           next(
             new CONFLICT_ERROR("Пользователь с данным email уже существует")
@@ -101,10 +98,10 @@ function updateUserAvatar(req, res, next) {
 
 async function login(req, res, next) {
   const { email, password } = req.body;
-  console.log(req.body);
+
   return User.findUserByCredentials(email, password, next)
     .then((user) => {
-      console.log(user);
+
       // аутентификация успешна! пользователь в переменной user
       const token = JWT.sign({ _id: user._id.valueOf() }, process.env.JWT_SECRET, {
         expiresIn: "7d",
@@ -112,9 +109,6 @@ async function login(req, res, next) {
       // res.clearCookie("jwt")
 
       res.cookie("jwt", token);
-      console.log('process.env.JWT_SECRET');
-       console.log('token');
-      console.log(token);
       return res
         .status(SUCCESS)
         .send({message: "Авторизация прошла успешно" });
