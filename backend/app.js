@@ -1,8 +1,9 @@
-require('dotenv').config();
-const cors = require('cors')
+require("dotenv").config();
+const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
-const { PORT = 3000, DB_URL = "mongodb://127.0.0.1:27017/mestodb" } = process.env;
+const { PORT = 3000, DB_URL = "mongodb://127.0.0.1:27017/mestodb" } =
+  process.env;
 const app = express();
 const routesUsers = require("./routes/users");
 const routesCards = require("./routes/cards");
@@ -12,15 +13,21 @@ const auth = require("./middlewares/auth");
 const { errors } = require("celebrate");
 const NOT_FOUND_ERROR = require("./errors/NotFoundError");
 const handleErrors = require("./middlewares/handleErrors");
-const { requestLogger, errorLogger } = require('./middlewares/logger');
-app.use(cors({origin:['http://localhost:3000', 'https://mesto.magmus-web.ru'], credentials: true, maxAge: 30})); //
+const { requestLogger, errorLogger } = require("./middlewares/logger");
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://mesto.magmus-web.ru"],
+    credentials: true,
+    maxAge: 30,
+  })
+); //
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger); // логгер запросов
 
-app.get('/crash-test', () => {
+app.get("/crash-test", () => {
   setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
+    throw new Error("Сервер сейчас упадёт");
   }, 0);
 });
 
